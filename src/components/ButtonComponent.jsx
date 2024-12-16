@@ -1,21 +1,22 @@
-import { use } from "react";
-import { useState } from "react";
+import { CardComponent } from "./CardComponent";
 
 // Faccio componente per il button da esportare
 // Funzione che mi ritorna un button JSX
-export function ButtonComponent({ testoButton }) {
-  // Destructuring array useState
-  const [state, setState] = useState(0);
+export function ButtonComponent({
+  testoButton,
+  testoDescrizione,
+  callbackEvento,
+  disegnaCard
+}) {
 
-  // Faccio callback per aggiornare state
-  const updateButton = () => {
-    setState(state + 1);
-  };
+    // disegnaCard ci serve per disegnare un button con classe warning
 
   // Restituisco un button
   return (
-    <button onClick={updateButton} className="btn btn-primary mx-2">
-      {testoButton} {state}
-    </button>
+    <>
+      <button onClick={callbackEvento} className={`btn ${(disegnaCard ? "btn-warning" : "btn-primary")} mx-2`}>
+        {testoButton}
+      </button>
+    </>
   );
 }
