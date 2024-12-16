@@ -1,17 +1,12 @@
-import { CardComponent } from "./CardComponent";
-
-// Faccio componente per il button da esportare
-// Funzione che mi ritorna un button JSX
+// Faccio componente per il button
 export function ButtonComponent({
   testoButton,
-  testoDescrizione,
   callbackEvento,
   disegnaCard
 }) {
-
-    // disegnaCard ci serve per disegnare un button con classe warning
-
-  // Restituisco un button
+  // Restituisco button
+  // Assegno evento onClick con relativa callback
+  // Assegno una classe per lo stile CSS se la prop disegnaCard è true
   return (
     <>
       <button onClick={callbackEvento} className={`btn ${(disegnaCard ? "btn-warning" : "btn-primary")} mx-2`}>
